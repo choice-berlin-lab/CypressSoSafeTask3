@@ -1,6 +1,8 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
 import LearningPage from '../common/LearningPage';
 
+
+
 Given('I\'m on the {string} page', (page) => {
     if (page === 'minimum') {
         LearningPage.visitMinimum();
@@ -10,6 +12,8 @@ Given('I\'m on the {string} page', (page) => {
         LearningPage.visitOther();
     }
 });
+
+//To use this function, I have to put Quotation Marks on feature file.
 
 Given('I\'m on a standard-learning-page with a customer logo', () => {
     LearningPage.visit('43a6f336704d321d');
@@ -65,7 +69,8 @@ Then('I don\'t see the {string} logo', (logo) => {
     } else if (logo === 'customer'){
         cy
         .get('.Header-branded')
-        .rightOf('#SoSafeHeaderIcon');
+        .rightOf('#SoSafeHeaderIcon')
+        .should('not.be.visible');
     }
 });
 

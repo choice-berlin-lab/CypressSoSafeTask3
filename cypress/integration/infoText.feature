@@ -4,5 +4,5 @@ Feature: Info-Text
 
     Scenario: For the Maximum page the title is changed
         Given I'm on the maximum page
-        When I get the Info-Text in the maxium page
+        When I see a info-text
         Then The Info-Text is ending in "[Test-Edit]"
